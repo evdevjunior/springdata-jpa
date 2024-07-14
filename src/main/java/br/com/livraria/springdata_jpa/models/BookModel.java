@@ -25,13 +25,13 @@ public class BookModel implements Serializable {
     @Column(nullable = false, unique = true) // criação da coluna não nulo e de valor unico
     private String title;
 
-    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @ManyToOne//(fetch = FetchType.LAZY) // relação muitos para um
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ManyToOne(fetch = FetchType.LAZY) // relação muitos para um
     @JoinColumn(name = "publisher_id") // relaciona a coluna publisher com a coluna Id da entidade publisher
     private PublisherModel publisher;
 
-    //@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @ManyToMany//(fetch = FetchType.LAZY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable( // junção das entidades book e author criando uma tabela auxiliar da relação
             name = "tb_book_author",
             joinColumns = @JoinColumn(name = "book_id"),

@@ -18,7 +18,7 @@ public class PublisherModel implements Serializable {
     private UUID id;
 
     @Column(nullable = false, unique = true)
-    private String nome;
+    private String name;
 
     //JsonPropertis permitindo escrita e não de leitura da requisição evitando erro de serielização
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -37,12 +37,12 @@ public class PublisherModel implements Serializable {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Set<BookModel> getBooks() {
