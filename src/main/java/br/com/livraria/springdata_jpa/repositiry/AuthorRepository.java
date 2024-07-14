@@ -7,6 +7,6 @@ import java.util.UUID;
 
 public interface AuthorRepository extends JpaRepository<AuthorModel, UUID> {
 
-
+    AuthorModel findAuthorModelByName(String name);
 
 }
